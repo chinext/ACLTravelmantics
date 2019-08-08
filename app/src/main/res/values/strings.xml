@@ -4,4 +4,6 @@
     <string name="hint_price">Price (Number only)</string>
     <string name="hint_description">Description</string>
     <string name="delete_deal">Delete Deal</string>
+    <string name="place_holder">TextView</string>
+    <string name="image_name">Travel Image</string>
 </resources>

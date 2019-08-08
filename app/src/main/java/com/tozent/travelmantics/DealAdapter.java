@@ -31,7 +31,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
     private ChildEventListener mChildListener;
-    private ImageView imageDeal;
+
 
 
 
@@ -99,6 +99,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         TextView tvTitle;
         TextView tvDescription;
         TextView tvPrice;
+        ImageView imageDeal;
 
         public DealViewHolder(View itemView) {
             super(itemView);
@@ -112,7 +113,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         public void bind(TravelDeal deal) {
             tvTitle.setText(deal.getTitle());
             tvDescription.setText(deal.getDescription());
-            tvPrice.setText(deal.getPrice());
+            tvPrice.setText("₦"+deal.getPrice());
             showImage(deal.getImageUrl());
         }
 
@@ -130,7 +131,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
             if (url != null && url.isEmpty()==false) {
                 Picasso.with(imageDeal.getContext())
                         .load(url)
-                        .resize(200, 200)
+                        .resize(300, 320)
                         .centerCrop()
                         .into(imageDeal);
             }
